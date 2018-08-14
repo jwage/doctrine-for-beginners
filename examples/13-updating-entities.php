@@ -1,6 +1,6 @@
 <?php
 // examples/13-updating-entities.php
-$entityManager = require __DIR__ . '/../orm-bootstrap.php';
+$entityManager = include dirname(__DIR__) . '/orm-bootstrap.php';
 
 use App\Entities\User;
 

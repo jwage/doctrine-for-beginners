@@ -1,6 +1,6 @@
 <?php
 // examples/15-querying-entities.php
-$entityManager = require __DIR__ . '/../orm-bootstrap.php';
+$entityManager = include dirname(__DIR__) . '/orm-bootstrap.php';
 
 use App\Entities\User;
 
@@ -8,7 +8,7 @@ use App\Entities\User;
 $user = $entityManager->getRepository(User::class)
     ->findOneByUsername('jonwage');
 
-echo $user->getUsername(); // jonwage
+echo $user->getUsername()."\n"; // jonwage
 
 // find all inactive users
 $qb = $entityManager->createQueryBuilder()

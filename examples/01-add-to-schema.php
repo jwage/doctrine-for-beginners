@@ -1,6 +1,6 @@
 <?php
 // examples/01-add-to-schema.php
-$connection = require __DIR__ . '/../dbal-bootstrap.php';
+$connection = include __DIR__ . '/../dbal-bootstrap.php';
 
 $schema = new Doctrine\DBAL\Schema\Schema();
 $usersTable = $schema->createTable('users');
@@ -15,5 +15,3 @@ foreach ($queries as $query) {
 }
 
 print_r($queries);
-
-// CREATE TABLE users (id INT UNSIGNED NOT NULL, username VARCHAR(32) NOT NULL, UNIQUE INDEX UNIQ_1483A5E9F85E0677 (username), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB

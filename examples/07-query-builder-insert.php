@@ -1,9 +1,10 @@
 <?php
-// examples/08-query-builder-insert.php
-$connection = require __DIR__ . '/../dbal-bootstrap.php';
+// examples/07-query-builder-insert.php
+$connection = include __DIR__ . '/../dbal-bootstrap.php';
 
 $queryBuilder = $connection->createQueryBuilder();
 
+// alias users as u, the same as we did on update
 $queryBuilder
     ->insert('users')
     ->setValue('username', ':username')

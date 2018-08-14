@@ -1,10 +1,11 @@
 <?php
 // examples/10-transactions.php
-$connection = require __DIR__ . '/../dbal-bootstrap.php';
+$connection = include __DIR__ . '/../dbal-bootstrap.php';
 
 use Doctrine\DBAL\Connection;
 
 $connection->beginTransaction();
+
 try {
     $connection->executeQuery('UPDATE users SET status = :status WHERE username = :username', [
         'status' => 'inactive',

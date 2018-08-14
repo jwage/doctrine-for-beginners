@@ -1,6 +1,6 @@
 <?php
-// examples/17-query-builder-inspecting-sql.php
-$connection = require __DIR__ . '/../dbal-bootstrap.php';
+// examples/09-query-builder-inspecting-sql.php
+$connection = include __DIR__ . '/../dbal-bootstrap.php';
 
 $queryBuilder = $connection->createQueryBuilder();
 
@@ -11,5 +11,4 @@ $queryBuilder
     ->setParameter('username', 'jwage')
 ;
 
-// SELECT id, username FROM users WHERE username = :username
 echo $queryBuilder->getSql();

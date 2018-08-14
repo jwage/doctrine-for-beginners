@@ -1,6 +1,6 @@
 <?php
-// examples/02-inspect-schema.php
-$connection = require __DIR__ . '/../dbal-bootstrap.php';
+// examples/03-inspect-schema.php
+$connection = include __DIR__ . '/../dbal-bootstrap.php';
 
 $schemaManager = $connection->getSchemaManager();
 
@@ -16,9 +16,4 @@ foreach ($tables as $table) {
     foreach ($columns as $column) {
         echo " - " . $column->getName() . "\n";
     }
-
 }
-
-$usersTable = $schemaManager->listTableDetails('users');
-
-$views = $schemaManager->listViews();

@@ -1,6 +1,6 @@
 <?php
 // dbal-bootstrap.php
-require_once __DIR__ . '/vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
 use Doctrine\DBAL\Configuration;
 use Doctrine\DBAL\DriverManager;
@@ -15,9 +15,7 @@ $params = [
     'driver' => 'pdo_mysql',
 ];
 
-// $params = [
-//     'driver' => 'pdo_sqlite',
-//     'path' => 'database_file.sqlite',
-// ];
+$connection = DriverManager::getConnection($params, $config);
+$connection->connect();
 
-return DriverManager::getConnection($params, $config);
+return $connection;
