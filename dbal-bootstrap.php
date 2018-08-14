@@ -15,9 +15,9 @@ $params = [
     'driver' => 'pdo_mysql',
 ];
 
-// $params = array(
+// $params = [
 //     'driver' => 'pdo_sqlite',
 //     'path' => 'database_file.sqlite',
-// );
+// ];
 
 return DriverManager::getConnection($params, $config);

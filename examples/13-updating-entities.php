@@ -1,13 +1,13 @@
 <?php
 // examples/13-updating-entities.php
-$entityManager = include dirname(__DIR__) . '/orm-bootstrap.php';
+$entityManager = require __DIR__ . '/../orm-bootstrap.php';
 
 use App\Entities\User;
 
 $user = $entityManager->getRepository(User::class)
     ->findOneByUsername('jonwage');
 
-$user->setStatus('inactive');
+$user->changeStatus('inactive');
 
 $entityManager->flush();
 

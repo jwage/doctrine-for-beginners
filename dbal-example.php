@@ -1,6 +1,6 @@
 <?php
 // dbal-example.php
-$connection = include('dbal-bootstrap.php');
+$connection = require __DIR__ . '/dbal-bootstrap.php';
 
 $createTableSql = <<<SQL
 CREATE TABLE users (

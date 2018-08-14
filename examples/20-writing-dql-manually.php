@@ -1,6 +1,6 @@
 <?php
 // examples/20-writing-dql-manually.php
-$entityManager = include dirname(__DIR__) . '/orm-bootstrap.php';
+$entityManager = require __DIR__ . '/../orm-bootstrap.php';
 
 $query = $entityManager->createQuery('SELECT u FROM App\Entities\User u WHERE u.status = :status');
 

@@ -6,7 +6,7 @@ namespace App\Entities;
  * @Entity
  * @Table(name="articles")
  */
-final class Article
+class Article
 {
     /**
      * @Id
@@ -17,8 +17,12 @@ final class Article
     private $id;
 
     /**
-     * @ManyToOne(targetEntity="User")
-     * @JoinColumn(name="user_id", referencedColumnName="id", onDelete="CASCADE")
+     * @ManyToOne(targetEntity=User::class)
+     * @JoinColumn(
+     *     name="user_id",
+     *     referencedColumnName="id",
+     *     onDelete="CASCADE"
+     * )
      * @var User
      */
     private $user;
@@ -35,11 +39,14 @@ final class Article
      */
     private $body = '';
 
-    // ...
-
-    public function __construct(User $user)
+    public function __construct(
+        User $user,
+        string $title,
+        string $body)
     {
-        $this->user = $user;
+        $this->user  = $user;
+        $this->title = $title;
+        $this->body  = $body;
     }
 
     public function getId() : ?int
@@ -47,19 +54,14 @@ final class Article
         return $this->id;
     }
 
-    public function setTitle(string $title) : void
+    public function getUser() : User
     {
-        $this->title = $title;
+        return $this->user;
     }
 
     public function getTitle() : string
     {
         return $this->title;
-    }
-
-    public function setBody(string $body) : void
-    {
-        $this->body = $body;
     }
 
     public function getBody() : string

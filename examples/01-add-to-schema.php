@@ -1,6 +1,6 @@
 <?php
 // examples/01-add-to-schema.php
-$connection = include dirname(__DIR__) . '/dbal-bootstrap.php';
+$connection = require __DIR__ . '/../dbal-bootstrap.php';
 
 $schema = new Doctrine\DBAL\Schema\Schema();
 $usersTable = $schema->createTable('users');

@@ -1,6 +1,6 @@
 <?php
 // examples/10-transactions.php
-$connection = include dirname(__DIR__) . '/dbal-bootstrap.php';
+$connection = require __DIR__ . '/../dbal-bootstrap.php';
 
 use Doctrine\DBAL\Connection;
 

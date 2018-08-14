@@ -1,16 +1,14 @@
 <?php
 // examples/12-creating-entities.php
-$entityManager = include dirname(__DIR__) . '/orm-bootstrap.php';
+$entityManager = require __DIR__ . '/../orm-bootstrap.php';
 
 use App\Entities\Article;
 use App\Entities\User;
 
 $user = new User();
-$user->setUsername('ocramius');
+$user->changeUsername('ocramius');
 
-$article = new Article($user);
-$article->setTitle('Test Article');
-$article->setBody('Test article body');
+$article = new Article($user, 'Test Article', 'Test article body');
 
 $entityManager->persist($user);
 $entityManager->persist($article);

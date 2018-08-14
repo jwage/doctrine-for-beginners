@@ -1,6 +1,6 @@
 <?php
 // examples/08-query-builder-insert.php
-$connection = include dirname(__DIR__) . '/dbal-bootstrap.php';
+$connection = require __DIR__ . '/../dbal-bootstrap.php';
 
 $queryBuilder = $connection->createQueryBuilder();
 

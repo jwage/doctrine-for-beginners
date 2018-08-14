@@ -1,6 +1,6 @@
 <?php
 // examples/02-inspect-schema.php
-$connection = include dirname(__DIR__) . '/dbal-bootstrap.php';
+$connection = require __DIR__ . '/../dbal-bootstrap.php';
 
 $schemaManager = $connection->getSchemaManager();
 

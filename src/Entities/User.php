@@ -3,10 +3,10 @@
 namespace App\Entities;
 
 /**
- * @Entity(repositoryClass="UserRepository")
+ * @Entity(repositoryClass=UserRepository::class)
  * @Table(name="users")
  */
-final class User
+class User
 {
     /**
      * @Id
@@ -28,26 +28,12 @@ final class User
      */
     private $status = 'active';
 
-    /**
-     * @Embedded(class="Address", columnPrefix="address_")
-     * @var Address|null
-     */
-    private $address;
-
-    /**
-     * @Column(name="phone_number", type="string", length=22, nullable=true)
-     * @var string|null
-     */
-    private $phoneNumber;
-
-    // ...
-
     public function getId() : ?int
     {
         return $this->id;
     }
 
-    public function setUsername(string $username) : void
+    public function changeUsername(string $username) : void
     {
         $this->username = $username;
     }
@@ -57,7 +43,7 @@ final class User
         return $this->username;
     }
 
-    public function setStatus(string $status) : void
+    public function changeStatus(string $status) : void
     {
         $this->status = $status;
     }
@@ -65,25 +51,5 @@ final class User
     public function getStatus() : string
     {
         return $this->status;
-    }
-
-    public function setAddress(Address $address)
-    {
-        $this->address = $address;
-    }
-
-    public function getAddress() : ? Address
-    {
-        return $this->address;
-    }
-
-    public function setPhoneNumber(string $phoneNumber) : void
-    {
-        $this->phoneNumber = $phoneNumber;
-    }
-
-    public function getPhoneNumber() : ? string
-    {
-        return $this->phoneNumber;
     }
 }

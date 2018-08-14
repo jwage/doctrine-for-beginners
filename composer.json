@@ -1,7 +1,7 @@
 {
     "require": {
         "doctrine/orm": "^2.6",
-        "doctrine/dbal": "^2.7",
+        "doctrine/dbal": "^2.8",
         "doctrine/migrations": "^2.0@alpha"
     },
     "autoload": {

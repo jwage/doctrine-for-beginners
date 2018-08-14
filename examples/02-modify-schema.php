@@ -1,6 +1,6 @@
 <?php
 // examples/02-modify-schema.php
-$connection = include dirname(__DIR__) . '/dbal-bootstrap.php';
+$connection = require __DIR__ . '/../dbal-bootstrap.php';
 
 $fromSchema = $connection->getSchemaManager()->createSchema();
 $toSchema = clone $fromSchema;

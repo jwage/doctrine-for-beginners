@@ -1,6 +1,6 @@
 <?php
 // examples/14-removing-entities.php
-$entityManager = include dirname(__DIR__) . '/orm-bootstrap.php';
+$entityManager = require __DIR__ . '/../orm-bootstrap.php';
 
 use App\Entities\User;
 

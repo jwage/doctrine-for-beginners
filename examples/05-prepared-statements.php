@@ -1,6 +1,6 @@
 <?php
 // examples/05-prepared-statements.php
-$connection = include dirname(__DIR__) . '/dbal-bootstrap.php';
+$connection = require __DIR__ . '/../dbal-bootstrap.php';
 
 // NO
 // $sql = "SELECT * FROM users WHERE username = '" . $_GET['username']. "'";
